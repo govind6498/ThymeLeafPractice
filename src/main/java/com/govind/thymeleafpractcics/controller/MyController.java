@@ -1,0 +1,20 @@
+package com.govind.thymeleafpractcics.controller;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class MyController {
+
+	@RequestMapping(value="/about",method=RequestMethod.GET)
+	public String about(Model model) {
+		System.out.println("Inside about Handler");
+		model.addAttribute("Name","Govind Singh");
+		model.addAttribute("CurrentDate",new Date().toLocaleString());
+		return "about";  //about.html
+	}
+}
